@@ -15,8 +15,8 @@ file_path='/etc/zabbix/zabbix_agentd.conf'
 
 copy_zabbix-agent4()
 {
-  wget -P /tmp/ http://osinit.ymtech.info:9000/public/zabbix-4.4.10-compiled-staticlib.tgz >/dev/null 2>&1
-  #rsync -aq --password-file=/etc/rsyncd.secrets rsync@ftpsin.ymtech.info::awsami/zabbix-4.4.10-compiled-staticlib.tgz /tmp/
+  wget -P /tmp/ http://xxx.xxx.xxx.xx:9000/public/zabbix-4.4.10-compiled-staticlib.tgz >/dev/null 2>&1
+  #rsync -aq --password-file=/etc/rsyncd.secrets rsync@xxx.xxxx.xxx.xx::awsami/zabbix-4.4.10-compiled-staticlib.tgz /tmp/
   if [ -e /tmp/${filename} ];then
     tar zxvf /tmp/${filename} -C /opt/ >/dev/null
   fi
