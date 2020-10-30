@@ -1,6 +1,6 @@
 #!/bin/bash
-# Author: jerry.zhao@ndpmedia.com
-# Date: 2016.05.03
+# Author: TLQ
+# Date: 2020-10-30
 
 
 filename="zabbix-4.4.10-compiled-staticlib.tgz"
