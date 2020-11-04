@@ -19,14 +19,14 @@ check_zabbix(){
       IP2=`hostname | awk -F '-' '{print $4}'`
       IP3=`hostname | awk -F '-' '{print $5}'`
       HOSTNAME="amz-sin${IP1}-sdk-${IP2}-${IP3}"
-      grep "${HOSTNAME}" /etc/zabbix/zabbix_agentd.conf>/dev/null 2>&1
+      grep -w "${HOSTNAME}" /etc/zabbix/zabbix_agentd.conf>/dev/null 2>&1
       if [ $? != 0 ];then
         echo "add zabbix_agentd.conf Hostname" >>/tmp/osinit.log
         sed -i 's/Hostname/#Hostname/g' /etc/zabbix/zabbix_agentd.conf
         echo "Hostname=${HOSTNAME}" >> /etc/zabbix/zabbix_agentd.conf
         service zabbix-agent restart
       fi
-      grep "10.17.10.100" /etc/zabbix/zabbix_agentd.conf>/dev/null 2>&1
+      grep -w "10.17.10.100" /etc/zabbix/zabbix_agentd.conf>/dev/null 2>&1
       if [ $? != 0 ];then
         echo "Add zabbix_agentd.conf Server=10.17.10.100" >>/tmp/osinit.log
         sed -i 's/Server/#Server/g' /etc/zabbix/zabbix_agentd.conf
